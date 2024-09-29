@@ -12,4 +12,13 @@ class Genre {
         ');
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
+
+    // Nuevo método para obtener el género por ID
+    public static function getById($id) {
+        $db = Database::connect();
+        $stmt = $db->prepare('SELECT id, name FROM genres WHERE id = :id');
+        $stmt->execute(['id' => $id]);
+        return $stmt->fetch(PDO::FETCH_ASSOC); // Devuelve solo un género
+    }
 }
+
