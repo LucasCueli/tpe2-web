@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 29-09-2024 a las 15:29:06
+-- Tiempo de generación: 29-09-2024 a las 16:35:24
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.0.30
 
@@ -30,16 +30,25 @@ SET time_zone = "+00:00";
 CREATE TABLE `genres` (
   `id` int(11) NOT NULL,
   `name` varchar(100) NOT NULL,
-  `song_count` int(11) DEFAULT 0
+  `song_count` int(11) DEFAULT 0,
+  `image` varchar(225) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `genres`
 --
 
-INSERT INTO `genres` (`id`, `name`, `song_count`) VALUES
-(1, 'Pop', 0),
-(2, 'Electro', 0);
+INSERT INTO `genres` (`id`, `name`, `song_count`, `image`) VALUES
+(1, 'Pop', 0, ''),
+(2, 'Electro', 0, ''),
+(3, 'Rock', 0, ''),
+(4, 'Metal', 0, ''),
+(5, 'Latinos', 0, ''),
+(6, 'Infantil', 0, ''),
+(7, 'Jazz', 0, ''),
+(8, 'Blues', 0, ''),
+(9, 'Rap', 0, ''),
+(10, 'K-Pop', 0, '');
 
 -- --------------------------------------------------------
 
@@ -63,9 +72,9 @@ CREATE TABLE `songs` (
 --
 
 INSERT INTO `songs` (`id`, `title`, `artist`, `album`, `year`, `lyrics`, `video_url`, `genre_id`) VALUES
-(1, 'Houdini', 'Dua Lipa', 'Houdini', '2024', '', '', 1),
+(1, 'Houdini', 'Dua Lipa', 'Houdini', '2024', '', 'https://open.spotify.com/embed/track/4OMJGnvZfDvsePyCwRGO7X?utm_source=generator&theme=0', 1),
 (2, 'The Nights', 'Avicii', '', '0000', '', '', 2),
-(3, 'Circles', 'Post Malone', '', '0000', '', '', 1);
+(3, 'Circles', 'Post Malone', '', '0000', '', 'https://open.spotify.com/embed/track/21jGcNKet2qwijlDFuPiPb?utm_source=generator&theme=0', 1);
 
 -- --------------------------------------------------------
 
@@ -110,7 +119,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT de la tabla `genres`
 --
 ALTER TABLE `genres`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT de la tabla `songs`
