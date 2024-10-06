@@ -1,0 +1,23 @@
+<?php require '../app/templates/header.phtml'; ?>
+
+<h1>Elige un género:</h1>
+
+<div class="carousel-container">
+    <button class="carousel-prev">&lt;</button> <!-- Botón de desplazamiento hacia la izquierda -->
+    <div class="carousel">
+        <?php foreach($genres as $genre): ?>
+            <div class="genre-card">
+                <a href="index.php?url=song&id=<?= $genre['id'] ?>">
+                    <img src="path_to_image/<?= strtolower($genre['nombre']) ?>.jpg" alt="<?= $genre['nombre'] ?>" class="genre-image">
+                    <div class="genre-info">
+                        <h2><?= $genre['nombre'] ?> (<?= $genre['song_count'] ?> canciones)</h2>
+                    </div>
+                </a>
+            </div>
+        <?php endforeach; ?>
+    </div>
+    <button class="carousel-next">&gt;</button> <!-- Botón de desplazamiento hacia la derecha -->
+</div>
+
+<?php require '../app/templates/footer.phtml'; ?>
+

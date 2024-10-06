@@ -1,0 +1,15 @@
+<?php require '../app/templates/header.phtml'; ?>
+
+<h1>Canciones del género</h1>
+<div class="songs">
+    <?php foreach($songs as $song): ?>
+        <div class="song-card">
+            <h3><?= $song['title'] ?> - <?= $song['artist'] ?></h3>
+            <a href="index.php?url=details&id=<?= $song['id'] ?>">Ver detalles</a>
+        </div>
+    <?php endforeach; ?>
+</div>
+
+<a href="index.php">Go Back</a>
+
+<?php require '../app/templates/footer.phtml'; ?>

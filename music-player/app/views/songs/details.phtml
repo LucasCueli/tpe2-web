@@ -1,0 +1,13 @@
+<?php require '../app/templates/header.phtml'; ?>
+
+<h1>Detalles de la canción</h1>
+<div class="song-details">
+    <h2><?= $song['title'] ?> - <?= $song['artist'] ?></h2>
+    <p>Duración: <?= $song['duration'] ?></p>    
+    <iframe style="border-radius:12px" src="<?= $song['url'] ?>" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    <p>Letra: <?= $song['lyrics'] ?></p>
+</div>
+
+<a href="index.php?url=song&id=<?= $song['id'] ?>">Go Back</a>
+
+<?php require '../app/templates/footer.phtml'; ?>
