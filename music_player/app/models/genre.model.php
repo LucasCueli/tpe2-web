@@ -20,7 +20,7 @@ class GenreModel extends Model {
         return $genre;
     }
 
-    public function saveGenre($genre, $artista, $anio, $discografica, $id = null) {
+    public function saveGenre($genre, $id = null) {
         if (isset($id)) {
             $query = $this->db->prepare('UPDATE genres SET nombre=? WHERE id=?');
             $query->execute([$genre, $id]);
