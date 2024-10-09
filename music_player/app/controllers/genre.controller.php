@@ -5,7 +5,7 @@ require_once './app/views/genre.view.php';
 require_once './app/models/genre.model.php';
 require_once './app/models/song.model.php';
 
-class AlbumController extends Controller {
+class GenreController extends Controller {
     private $genreModel;
     private $songModel;
 
