@@ -6,9 +6,9 @@ class SongView extends View {
 
     public function showSongs($songs, $genres) {
         
-        //pasamos la duracion de segundos a mm:ss
+        //pasamos la duration de segundos a mm:ss
         foreach ($songs as $song) {
-            $song->duracion = gmdate("i:s", $song->duration);
+            $song->duration = gmdate("i:s", $song->duration);
         }
 
         //seteamos el form para agregar canciones
@@ -17,7 +17,7 @@ class SongView extends View {
     }
 
     public function showSong($song, $genre) {
-        $song->duracion = gmdate("i:s", $song->duracion);
+        $song->duration = gmdate("i:s", $song->duration);
         require './app/templates/detail.song.phtml';
     }
 
